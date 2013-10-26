@@ -30,10 +30,18 @@ if [ $? -eq 1 ]; then
 	brew install python
 fi
 
-if [ ! -d /Applications/Mamp.app ]; then
+if [ ! -d /Applications/MAMP ]; then
 
 	wget http://downloads.mamp.info/MAMP-PRO/releases/2.2/MAMP_MAMP_PRO_2.2.zip
 	tar -xjvf MAMP_MAMP_PRO_2.2.zip
 	mv Mamp.app /Applications/
 	rm MAMP_MAMP_PRO_2.2.zip
+fi
+
+if [ ! -d /Applications/Dash.app ]; then
+	wget http://kapeli.com/Dash.zip
+	tar -xjvf Dash.zip
+	mv Dash.app /Applications/
+	rm Dash.zip
+	rm -r __MACOSX
 fi
