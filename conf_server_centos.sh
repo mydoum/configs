@@ -39,3 +39,10 @@ sudo echo -e "[mongodb]\
 
 sudo yum install nginx
 sudo /etc/init.d/nginx start
+
+sudo yum install mongo-10gen mongo-10gen-server
+sudo service mongod start
+
+# Configure nginx
+
+sudo sed -i "" 's|root   /usr/share/nginx/html|root   /var/www/|g' /etc/nginx/conf.d/default.conf

@@ -13,6 +13,23 @@ if [ $? -eq 1 ]; then
 	brew update
 fi
 
+hash node &> /dev/null
+if [ $? -eq 1 ]; then
+	brew install node
+fi
+
+hash npm &> /dev/null
+if [ $? -eq 1 ]; then
+	curl http://npmjs.org/install.sh | sh
+	export NODE_PATH="/usr/local/lib/node"
+	export PATH="/usr/local/share/npm/bin:$PATH"
+fi
+
+hash bower &> /dev/null
+if [ $? -eq 1 ]; then
+	npm install -g bower
+fi
+
 hash wget &> /dev/null
 if [ $? -eq 1 ]; then
 	brew install wget
@@ -44,4 +61,14 @@ if [ ! -d /Applications/Dash.app ]; then
 	mv Dash.app /Applications/
 	rm Dash.zip
 	rm -r __MACOSX
+fi
+
+hash mongod &> /dev/null
+if [ $? -eq 1 ]; then
+	brew install mongodb
+fi
+
+hash go &> /dev/null
+if [ $? -eq 1 ]; then
+	brew install go
 fi
