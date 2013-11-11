@@ -105,3 +105,5 @@ if [ $? -eq 1 ]; then
 	go get labix.org/v2/mgo
 	go get labix.org/v2/mgo/bson
 fi
+
+brew install tree
