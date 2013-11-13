@@ -1,5 +1,12 @@
 #!/bin/bash
 
+mv ./vim_conf/.vimrc ~/.
+mv -r ./vim_conf/.vim ~/.
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+curl -Sso ~/.vim/autoload/pathogen.vim \
+    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
 hash brew &> /dev/null;
 if [ $? -eq 1 ]; then
 	ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
