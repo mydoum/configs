@@ -6,4 +6,4 @@ set expandtab
 
 set number
 
-colorscheme molokai
+colorscheme molokai-modified
