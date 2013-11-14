@@ -1,8 +1,5 @@
 #!/bin/bash
 
-mv ./vim_conf/.vimrc ~/.
-mv -r ./vim_conf/.vim ~/.
-
 mkdir -p ~/.vim/autoload ~/.vim/bundle; \
 curl -Sso ~/.vim/autoload/pathogen.vim \
     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
@@ -20,17 +17,12 @@ if [ $? -eq 1 ]; then
 	brew update
 fi
 
-hash node &> /dev/null
-if [ $? -eq 1 ]; then
-	brew install node
-fi
 
-hash npm &> /dev/null
-if [ $? -eq 1 ]; then
-	curl http://npmjs.org/install.sh | sh
-	export NODE_PATH="/usr/local/lib/node"
-	export PATH="/usr/local/share/npm/bin:$PATH"
-fi
+mv ./vim_conf/.vimrc ~/.
+mv -r ./vim_conf/.vim ~/.
+
+cd ~/.vim/bundle
+git clone https://github.com/scrooloose/syntastic.git ~/.vim/bundle
 
 hash bower &> /dev/null
 if [ $? -eq 1 ]; then
@@ -41,6 +33,8 @@ hash wget &> /dev/null
 if [ $? -eq 1 ]; then
 	brew install wget
 fi
+
+brew install homebrew/versions/gcc49
 
 if [ ! -d /Applications/Filezilla.app ]; then
 	wget http://ncu.dl.sourceforge.net/project/filezilla/FileZilla_Client/3.7.3/FileZilla_3.7.3_i686-apple-darwin9.app.tar.bz2
@@ -112,5 +106,12 @@ if [ $? -eq 1 ]; then
 	go get labix.org/v2/mgo
 	go get labix.org/v2/mgo/bson
 fi
+
+# add the autocompletion for go language into vim
+echo "don't forget to add your GOPATH/bin in your PATH"
+echo "don't forget to add /usr/local/go/bin to your PATH"
+git clone git@github.com:nsf/gocode.git
+gocode/vim/update.sh
+
 
 brew install tree

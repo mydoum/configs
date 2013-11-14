@@ -1,7 +1,11 @@
 " initialize plug-in
 execute pathogen#infect()
-syntax on
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
+call pathogen#incubate()
+syntax on
 
 " tab into spaces
 set tabstop=2
