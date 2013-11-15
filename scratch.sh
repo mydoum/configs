@@ -48,6 +48,12 @@ if [ $? -eq 1 ]; then
 	brew install python
 fi
 
+brew search gdb &> /dev/null
+if [ $? -eq 1 ]; then
+	brew install gdb
+fi
+
+
 if [ ! -d /Applications/MAMP ]; then
 
 	wget http://downloads.mamp.info/MAMP-PRO/releases/2.2/MAMP_MAMP_PRO_2.2.zip
