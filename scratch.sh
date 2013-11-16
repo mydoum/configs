@@ -21,8 +21,9 @@ fi
 mv ./vim_conf/.vimrc ~/.
 mv -r ./vim_conf/.vim ~/.
 
-cd ~/.vim/bundle
 git clone https://github.com/scrooloose/syntastic.git ~/.vim/bundle
+git clone git://github.com/tpope/vim-fugitive.git ~/.vim/bundle
+git clone git@github.com:davidhalter/jedi-vim.git ~/.vim/bundle
 
 hash bower &> /dev/null
 if [ $? -eq 1 ]; then
@@ -52,6 +53,8 @@ brew search vim &> /dev/null
 if [ $? -eq 1 ]; then
   brew install vim --env-std --override-system-vim
 fi
+
+pip install jedi
 
 brew search fontforge &> /dev/null
 if [ $? -eq 1 ]; then
