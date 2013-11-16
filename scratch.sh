@@ -48,11 +48,25 @@ if [ $? -eq 1 ]; then
 	brew install python
 fi
 
+brew search vim &> /dev/null
+if [ $? -eq 1 ]; then
+  brew install vim --env-std --override-system-vim
+fi
+
+brew search fontforge &> /dev/null
+if [ $? -eq 1 ]; then
+  brew install fontforge 
+fi
+
 brew search gdb &> /dev/null
 if [ $? -eq 1 ]; then
 	brew install gdb
 fi
 
+brew search psutils &> /dev/null
+if [ $? -eq 1 ]; then
+	brew install psutils
+fi
 
 if [ ! -d /Applications/MAMP ]; then
 
