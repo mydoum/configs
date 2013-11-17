@@ -34,3 +34,13 @@ if version >= 700
         set undodir=~/.vimtmp/undo
             silent !mkdir -p ~/.vimtmp/undo
             endif
+
+" temp commands -> learning
+nnoremap <up>    <nop>
+nnoremap <down>  <nop>
+nnoremap <left>  <nop>
+nnoremap <right> <nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
+inoremap <left>  <nop>
+inoremap <right> <nop>
