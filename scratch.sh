@@ -24,6 +24,8 @@ mv -r ./vim_conf/.vim ~/.
 git clone https://github.com/scrooloose/syntastic.git ~/.vim/bundle
 git clone git://github.com/tpope/vim-fugitive.git ~/.vim/bundle
 git clone git@github.com:davidhalter/jedi-vim.git ~/.vim/bundle
+git clone git@github.com:majutsushi/tagbar.git ~/.vim/bundle
+git clone git@github.com:Lokaltog/vim-easymotion.git ~/.vim/bundle
 
 hash bower &> /dev/null
 if [ $? -eq 1 ]; then
@@ -58,7 +60,7 @@ pip install jedi
 
 brew search fontforge &> /dev/null
 if [ $? -eq 1 ]; then
-  brew install fontforge 
+  brew install fontforge
 fi
 
 brew search gdb &> /dev/null
@@ -70,6 +72,11 @@ brew search psutils &> /dev/null
 if [ $? -eq 1 ]; then
 	brew install psutils
 fi
+
+# FIXME check if ctags is already installed
+wget http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
+tar -zxvf ctags-5.8.tar.gz
+cd ctags-5.8 && ./configure && make && make install
 
 if [ ! -d /Applications/MAMP ]; then
 
@@ -96,7 +103,7 @@ if [ ! -d /Applications/Zipeg.app ]; then
 	rm zipeg_mac.dmg
 fi
 
-# Install specific Web aplications 
+# Install specific Web aplications
 
 if ! hash node 2> /dev/null; then
   	echo "[install] Node.js"

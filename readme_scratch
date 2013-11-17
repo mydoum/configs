@@ -1,4 +1,8 @@
-only avalaible on MAC OSX, this script will install homebrew and install basic applications. Useful when your hardrive burn without reason ..
+only avalaible on MAC OSX, this script will install homebrew and basic applications. Useful when your hardrive burn without any reason ..
 
 Before running the script, you need :
   - command line tools osX
+
+-- ! --
+Not tested yet
+-- ! --
