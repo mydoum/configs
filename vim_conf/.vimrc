@@ -5,10 +5,19 @@ filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 call pathogen#incubate()
+source ~/.vim/bundle/powerline/powerline/bindings/vim/plugin/powerline.vim
+set laststatus=2
 syntax on
 
+" conf plug-in
+"   easymotion
+let g:EasyMotion_leader_key = '\'
+
+"   tagbar
+nmap <F8> :TagbarToggle<CR>
+
 " tab into spaces
-set tabstop=2
+set tabstop=4
 set shiftwidth=4
 set expandtab
 
@@ -44,3 +53,7 @@ inoremap <up>    <nop>
 inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
+
+" trial binds
+    "delete automaticaly the trailing whitespaces when :w
+autocmd BufWritePre * :%s/\s\+$//e
