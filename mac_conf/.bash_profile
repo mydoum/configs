@@ -4,9 +4,10 @@ export PATH=/usr/local/bin:$PATH:$GOPATH/bin:/usr/local/share/npm/bin:/opt/local
 export GOROOT=/usr/local/go
 export NODE_PATH=/usr/local/lib/node
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-export CURR=$HOME/Dropbox/go/src/string_test/test03/
+export CURR=$HOME/Dropbox/go/src/string_test/test04/
 
-# personnal aliases
+
+# command aliases
 alias path='echo -e ${PATH//:/\\n}'
 alias godebug='go build -gcflags "-N -l"'
 alias l='ls -GFh'
@@ -15,7 +16,11 @@ alias ll='ls -lv'
 alias tree='tree -C'
 alias untar='tar -zxvf'
 
-# personnal functions
+# personnal aliases
+alias tunnel='ssh -D 8080 root@37.187.66.198'
+alias vpn='/usr/bin/osascript ~/Document/script/socks.scpt'
+
+# functions
 function mkcd(){
     mkdir $1
     cd $1

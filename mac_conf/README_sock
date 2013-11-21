@@ -1,0 +1,9 @@
+What is it ?
+
+This script enable the "access for assistive devices" of your Mac if it's disabled
+and enable/disable the "SOCK Proxy" of your wifi
+
+- - - -
+How to use it ?
+
+42sh$ /usr/bin/osascript socks.scpt
