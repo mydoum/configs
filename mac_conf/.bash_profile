@@ -18,7 +18,8 @@ alias untar='tar -zxvf'
 
 # personnal aliases
 alias tunnel='ssh -D 8080 root@37.187.66.198'
-alias vpn='/usr/bin/osascript ~/Document/script/socks.scpt'
+alias perso='ssh alvaro@103.5.12.30'
+alias vpn='/usr/bin/osascript ~/Documents/scripts/mac_conf/socks.scpt'
 
 # functions
 function mkcd(){
