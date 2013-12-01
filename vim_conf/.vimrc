@@ -30,6 +30,9 @@ colorscheme molokai-modified
 " fix backspace problem
 set backspace=start,eol,indent
 
+" visual
+set textwidth=79
+
 " set backup
 set backup
 set backupdir=~/.vimtmp/backup

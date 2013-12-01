@@ -104,7 +104,7 @@
 	<key>BackgroundAlphaInactive</key>
 	<real>0.78293678977272729</real>
 	<key>BackgroundBlur</key>
-	<real>0.082919034090909088</real>
+	<real>0.11592240767045454</real>
 	<key>BackgroundBlurInactive</key>
 	<real>0.0</real>
 	<key>BackgroundColor</key>
@@ -120,16 +120,18 @@
 	<true/>
 	<key>Bell</key>
 	<false/>
+	<key>CommandString</key>
+	<string>tmux</string>
 	<key>CursorBlink</key>
 	<false/>
 	<key>CursorColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPECYw
-	LjUzNzc2ODk0MzMgMC41MTU3NTI2NDcgMC41NTQ4Mjk5NzcyABABgALSEBESE1okY2xh
-	c3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2
-	ZXLRFxhUcm9vdIABCBEaIy0yNztBSE5bYouNj5SfqLCzvM7R1gAAAAAAAAEBAAAAAAAA
-	ABkAAAAAAAAAAAAAAAAAAADY
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPEBwx
+	IDAuOTQwODg5MzkwOSAwLjk2MTM0NDc0MjgAEAGAAtIQERITWiRjbGFzc25hbWVYJGNs
+	YXNzZXNXTlNDb2xvcqISFFhOU09iamVjdF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290
+	gAEIERojLTI3O0FITltigYOFipWepqmyxMfMAAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAA
+	AAAAAAAAAM4=
 	</data>
 	<key>DisableANSIColor</key>
 	<false/>

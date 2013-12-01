@@ -7,3 +7,7 @@ if [ ! -d /Applications/Ifunbox.app ]; then
 	hdiutil unmount /Volumes/iFunBox
 	rm ifunboxmac.1.2.dmg
 fi
+
+brew install mpfr gmp libmpc
+
+pip install Django==1.6
