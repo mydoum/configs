@@ -1,15 +1,10 @@
 # add to path the gopath
-export GOPATH=$HOME/Dropbox/go:/Users/alonso/Documents/go
 export PATH=/usr/local/bin:/usr/local/sbin:/opt/gccgo/bin:$PATH:$GOPATH/bin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/usr/sbin
-export GOROOT=/usr/local/go
-export NODE_PATH=/usr/local/lib/node
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-export CURR=$HOME/Documents/work/6sun/django
-
 
 # command aliases
+alias server='ssh alonso@5.135.180.173'
+alias man='lman'
 alias path='echo -e ${PATH//:/\\n}'
-alias godebug='go build -gcflags "-N -l"'
 alias l='ls -GFh'
 alias la='ls -a'
 alias ll='ls -lv'
@@ -19,38 +14,72 @@ alias mkdir='mkdir -p'
 alias sourceb='source ~/.bash_profile'
 alias vimbash='vim ~/.bash_profile'
 
-# personnal aliases
-alias tunnel='ssh -D 8080 alonso@6sun.eu -t "command; bash -l"'
+# ============================================
+# ================ NodeJS conf ================
+# ============================================
+
+# export NODE_PATH=/usr/local/lib/node
+# export NODE_PATH=/usr/local/Cellar/node/7.0.0/bin/node
+
+# ============================================
+# ================ Go conf ================
+# ============================================
+
+alias godebug='go build -gcflags "-N -l"'
+export GOPATH=$HOME/Dropbox/go:/Users/alonso/Documents/go
+export GOROOT=/usr/local/go
+
+# ============================================
+# ================ Java conf ================
+# ============================================
+
+export JBOSS_HOME=/usr/local/opt/wildfly-as/libexec
+export PATH=${PATH}:${JBOSS_HOME}/bin
+
+function tomcat(){
+    /usr/local/Cellar/tomcat/8.0.27/bin/catalina run
+}
+
+# ============================================
+# ================ Python conf ================
+# ============================================
+
+alias python='/usr/bin/python2.7'
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+
+# added by Anaconda3 4.1.1 installer
+#export PYTHONPATH=/Users/alonso/anaconda3/bin/python3.5
+#export PATH="/Users/alonso/anaconda3/bin:$PATH"
+
+# ============================================
+# ================ Extra conf ================
+# ============================================
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# ============================================
+# ================ POSTGRESQL ================
+# ============================================
+
+export PGDATA=$HOME/Documents/data/postgresql_9-4
+alias pg='postgres -D $PGDATA'
+alias pgfile='cd ~/Documents/Study/Projects/postgresql/sujet_bdd/girald_a-rattrapage-bdd'
+
+# ============================================
+# ================ PHP conf ==================
+# ============================================
 
 # shortcuts php
 alias php-start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist'
 alias php-stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist'
 alias php-restart='php-stop && php-start'
 
-# functions
-function mkcd(){
-    mkdir $1
-    cd $1
-}
-
-function lman(){
-    man $1 | less
-}
-
-# function to replace $CURR if you do often more than one command
-function curr(){
-    cd /Users/alonso/Documents/work/6sun/django
-    source environment1/bin/activate
-    cd website6sun
-}
-
 # start needed services to work
 function start(){
     mysql.server start
     sudo nginx
     php-start
-    curr
-    $CURR/website6sun/manage.py runserver
 }
 
 function stop(){
@@ -59,7 +88,39 @@ function stop(){
     php-stop
 }
 
-alias man='lman'
+# ============================================
+# =================== Ruby ===================
+# ============================================
+
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/shims:$PATH"
+
+# ============================================
+# ================ FUNCTIONS =================
+# ============================================
+
+# functions
+function mkcd(){
+    mkdir $1
+    cd $1
+}
+
+function rachel(){
+    echo "mamou je t'aime a la folie!!!!"
+}
+
+function man(){
+    man $1 | less
+}
+
+# function to replace $CURR if you do often more than one command
+function curr(){
+    cd /Users/alonso/Documents/study/All/java/2015
+}
+
+# ============================================
+# ================ Prompt & Shell ============
+# ============================================
 
 # prompt & colors
 export PS1="\[\033[31m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
@@ -81,13 +142,6 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # powerline
 # . ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
 
-# Kaneton configuration
-export KANETON_USER="alonso"
-export KANETON_HOST="linux/ia32"
-export KANETON_PLATFORM="ibm-pc"
-export KANETON_ARCHITECTURE="ia32/educational"
-export KANETON_PYTHON="/usr/bin/python"
-
 ##
 # Your previous /Users/alonso/.bash_profile file was backed up as /Users/alonso/.bash_profile.macports-saved_2014-11-04_at_18:19:13
 ##
@@ -95,4 +149,5 @@ export KANETON_PYTHON="/usr/bin/python"
 # MacPorts Installer addition on 2014-11-04_at_18:19:13: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
+
 
